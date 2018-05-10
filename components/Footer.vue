@@ -8,4 +8,7 @@
 </template>
 
 <style>
+nav.bg-white {
+  background-color: white;
+}
 </style>

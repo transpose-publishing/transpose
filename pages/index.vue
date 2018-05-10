@@ -46,15 +46,4 @@ h3.subtitle {
   margin-bottom: 100px;
   /* color: white; */
 }
-/* header {
-  background-image: url('~/assets/bg.jpg');
-  background-position: center;
-  background-size: 100% auto;
-} */
-/* header h1 {
-  color: white;
-}
-header h3 {
-  color: white;
-} */
 </style>
