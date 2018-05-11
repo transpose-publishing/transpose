@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   /*
   ** Headers of the page
@@ -43,5 +45,7 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  rootDir: path.resolve(__dirname),
+  dev: process.env.NODE_ENV !== 'production',
 }
