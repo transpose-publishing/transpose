@@ -1,5 +1,5 @@
 <template>
-<div class="col-sm-4 col-md-3 col-lg-2">
+<div class="col-sm-6 col-md-4 col-lg-3">
   <p><strong>{{q}}</strong>: {{a}}</p>
 </div>
 </template>

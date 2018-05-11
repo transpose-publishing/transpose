@@ -2,8 +2,6 @@ module.exports = {
   /*
   ** Headers of the page
   */
-  //     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    // <link rel="stylesheet" href="https://unpkg.com/shards-ui@2.0.2/dist/css/shards.min.css">
   head: {
     title: 'transpose',
     meta: [
