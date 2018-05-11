@@ -46,6 +46,7 @@ module.exports = {
       }
     }
   },
-  rootDir: path.resolve(__dirname),
+  // rootDir: path.resolve(__dirname, 'client'),
+  srcDir: path.resolve(__dirname, 'client'),
   dev: process.env.NODE_ENV !== 'production',
 }
