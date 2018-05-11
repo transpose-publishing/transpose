@@ -11,9 +11,20 @@
     "start": "NODE_ENV=production node api/",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "yarn run lint"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "api",
+    "test": "test/"
+  },
+  "engines": {
+    "node": "^10.0.0",
+    "yarn": ">= 0.18.0"
   },
   "dependencies": {
+    "@feathersjs/client": "^3.4.5",
     "@feathersjs/configuration": "^1.0.2",
     "@feathersjs/errors": "^3.3.0",
     "@feathersjs/express": "^1.2.2",
@@ -21,7 +32,10 @@
     "@feathersjs/socketio": "^3.2.1",
     "compression": "^1.7.2",
     "cors": "^2.8.4",
+    "feathers-mongodb": "^3.1.0",
+    "feathers-vuex": "^1.3.0",
     "helmet": "^3.12.0",
+    "mongodb": "^3.1.0-beta4",
     "nuxt": "^1.0.0",
     "serve-favicon": "^2.5.0",
     "winston": "^2.4.2"

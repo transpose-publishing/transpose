@@ -44,7 +44,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
   },
   // rootDir: path.resolve(__dirname, 'client'),
   srcDir: path.resolve(__dirname, 'client'),
