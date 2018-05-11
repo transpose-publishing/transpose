@@ -1,7 +1,7 @@
 {
   "name": "transpose",
-  "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "version": "0.0.1",
+  "description": "Nuxt + Feathers",
   "author": "Cameron Blandford <cam.blandford@gmail.com>",
   "private": true,
   "scripts": {
