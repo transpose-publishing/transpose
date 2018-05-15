@@ -1,7 +1,7 @@
 import Vuex from 'vuex'
 import feathersClient from '../../feathers-client'
 import feathersVuex, { initAuth } from 'feathers-vuex'
-const { service, auth } = feathersVuex(feathersClient)
+const { service, auth } = feathersVuex(feathersClient, { idField: '_id' })
 const createStore = () => {
   return new Vuex.Store({
     state: {},
