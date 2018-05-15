@@ -14,29 +14,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">OAP</th>
-          <td>Example Publisher</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Any time</td>
-        </tr>
-        <tr>
-          <th scope="row">MyPol</th>
-          <td>Cool Publisher</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Any time</td>
-        </tr>
-        <tr>
-          <th scope="row">GoldOA</th>
-          <td>Bad Publisher</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Yes</td>
-          <td>Any time</td>
+        <tr v-for="journal in journals" :key="journal._id">
+          <th scope="row"><nuxt-link :to="{ path: '/policies/' + journal._id }">{{journal['policy-id']}}</nuxt-link></th>
+          <td>{{journal.publisher}}</td>
+          <td>{{journal['open-reports']}}</td>
+          <td>{{journal['identities-revealed']}}</td>
+          <td>{{journal['identities-published']}}</td>
+          <td>{{journal['preprint-time']}}</td>
         </tr>
       </tbody>
     </table>
@@ -45,12 +29,21 @@
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-
+import { mapActions, mapGetters } from 'vuex';
 export default {
-  components: {
-    AppLogo
-  }
+  async fetch ({ store, params }) {
+    await store.dispatch('journals/find', {query:{}});
+  },
+  computed: {
+    ...mapGetters('journals', {
+      journals: 'list'
+    })
+  },
+  methods: {
+    ...mapActions('journals', {
+      findJournals: 'find'
+    })
+  },
 }
 </script>
 

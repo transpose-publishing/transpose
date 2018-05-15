@@ -16,10 +16,10 @@
             Publisher
           </th>
           <td>
-            Flourish & Blotts Publishers
+            {{firstPolicy.publisher}}
           </td>
           <td>
-            Ward Lock & Co.
+            {{secondPolicy.publisher}}
           </td>
         </tr>
         <tr>
@@ -27,10 +27,10 @@
             Open Reports?
           </th>
           <td class="table-success">
-            Yes
+            {{firstPolicy.openReports}}
           </td>
           <td class="table-danger">
-            No
+            {{secondPolicy.openReports}}
           </td>
         </tr>
         <tr>
@@ -38,10 +38,10 @@
             Identities Revealed?
           </th>
           <td class="table-success">
-            Yes
+            {{firstPolicy.identitiesRevealed}}
           </td>
           <td class="table-success">
-            Yes
+            {{secondPolicy.identitiesRevealed}}
           </td>
         </tr>
         <tr>
@@ -49,10 +49,11 @@
             Identities Published?
           </th>
           <td class="table-danger">
-            No
+            {{firstPolicy.identitiesPublished}}
           </td>
           <td class="table-success">
-            Yes
+            {{secondPolicy.identitiesPublished}}
+
           </td>
         </tr>
         <tr>
@@ -60,10 +61,10 @@
             Co-review Policy
           </th>
           <td>
-            Curabitur dignissim lorem sit amet tristique fringilla. Proin tempor, ex ut ultrices semper, augue mi maximus eros, vitae tempor mi metus ut metus. Donec luctus enim ipsum, non semper sem semper in.
+            {{firstPolicy.coReviewPolicy}}
           </td>
           <td>
-            Quisque vel arcu eu leo gravida feugiat ac vel diam. Nulla maximus felis rutrum justo porta malesuada. Duis pretium quam vel velit congue vehicula.
+            {{secondPolicy.coReviewPolicy}}
           </td>
         </tr>
         <tr>
@@ -71,10 +72,10 @@
             PR Transfer Policy
           </th>
           <td>
-            Mauris turpis erat, interdum ac sapien id, tempor fermentum dui. Praesent a dolor aliquam magna varius feugiat eu nec justo.
+            {{firstPolicy.prTransferPolicy}}
           </td>
           <td>
-            Sed sed risus aliquet, congue ante aliquet, maximus turpis. Donec aliquet ipsum a massa venenatis scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            {{secondPolicy.prTransferPolicy}}
           </td>
         </tr>
         <tr>
@@ -82,10 +83,10 @@
             Seperate fields for technical & impact evaluation?
           </th>
           <td class="table-danger">
-            No
+            {{firstPolicy.separateFields}}
           </td>
           <td class="table-success">
-            Yes
+            {{secondPolicy.separateFields}}
           </td>
         </tr>
         <tr>
@@ -93,10 +94,10 @@
             Deposit peer review info into ORCiD?
           </th>
           <td class="table-danger">
-            No
+            {{firstPolicy.orcidDeposit}}
           </td>
           <td class="table-success">
-            Yes
+            {{secondPolicy.orcidDeposit}}
           </td>
         </tr>
         <tr>
@@ -104,10 +105,10 @@
             Can users archive preprints?
           </th>
           <td class="table-danger">
-            No
+            {{firstPolicy.prearchive}}
           </td>
           <td class="table-success">
-            Yes
+            {{secondPolicy.prearchive}}
           </td>
         </tr>
         <tr>
@@ -115,10 +116,10 @@
             When can a preprint be posted?
           </th>
           <td class="table-warning">
-            Before acceptance only
+            {{firstPolicy.preprintTimes}}
           </td>
           <td class="table-success">
-            Anytime
+            {{secondPolicy.preprintTimes}}
           </td>
         </tr>
         <tr>
@@ -126,10 +127,10 @@
             Preprint Licensing Policy
           </th>
           <td>
-            Suspendisse varius sit amet arcu in ornare. Etiam euismod erat in dictum consectetur.
+            {{firstPolicy.licensingPolicy}}
           </td>
           <td>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris consequat dui a lectus rhoncus, vel interdum nibh euismod. Donec nulla metus, feugiat eu ligula at, venenatis auctor ipsum.
+            {{secondPolicy.licensingPolicy}}
           </td>
         </tr>
         <tr>
@@ -137,10 +138,10 @@
             Can preprints be cited?
           </th>
           <td class="table-success">
-            Yes
+            {{firstPolicy.citePreprints}}
           </td>
           <td class="table-danger">
-            No
+            {{secondPolicy.citePreprints}}
           </td>
         </tr>
 
@@ -151,11 +152,41 @@
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
 
 export default {
   components: {
-    AppLogo
+  },
+  data() {
+    return {
+      firstPolicy: {
+        publisher: 'Flourish & Blotts Publishers',
+        openReports: true,
+        identitiesRevealed: true,
+        identitiesPublished: false,
+        coReviewPolicy: 'Curabitur dignissim lorem sit amet tristique fringilla. Proin tempor, ex ut ultrices semper, augue mi maximus eros, vitae tempor mi metus ut metus. Donec luctus enim ipsum, non semper sem semper in.',
+        prTransferPolicy: 'Mauris turpis erat, interdum ac sapien id, tempor fermentum dui. Praesent a dolor aliquam magna varius feugiat eu nec justo.',
+        separateFields: false,
+        orcidDeposit: false,
+        prearchive: false,
+        preprintTimes: 'Before acceptance only',
+        licensingPolicy: 'Suspendisse varius sit amet arcu in ornare. Etiam euismod erat in dictum consectetur.',
+        citePreprints: true
+      },
+      secondPolicy: {
+        publisher: 'Ward Lock & Co.',
+        openReports: false,
+        identitiesRevealed: true,
+        identitiesPublished: true,
+        coReviewPolicy: 'Quisque vel arcu eu leo gravida feugiat ac vel diam. Nulla maximus felis rutrum justo porta malesuada. Duis pretium quam vel velit congue vehicula.',
+        prTransferPolicy: 'Sed sed risus aliquet, congue ante aliquet, maximus turpis. Donec aliquet ipsum a massa venenatis scelerisque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        separateFields: true,
+        orcidDeposit: true,
+        prearchive: true,
+        preprintTimes: 'Any time',
+        licensingPolicy: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris consequat dui a lectus rhoncus, vel interdum nibh euismod. Donec nulla metus, feugiat eu ligula at, venenatis auctor ipsum.',
+        citePreprints: false
+      }
+    }
   }
 }
 </script>
