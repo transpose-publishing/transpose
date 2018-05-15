@@ -12,6 +12,7 @@ for (let i = 1000 ; i < 2000 ; i++) {
     // console.log(response.data);
     try {
         const json = yaml.safeLoad(response.data);
+        json._id = json['policy-id'];
         axios.post('http://localhost:3030/journals', json).then((response) => {
           console.log('Posted successfully!');
           // console.log(response);
