@@ -1,7 +1,7 @@
 <template>
 <div>
   <section class="container" style="padding-top:50px">
-    <h2 class="text-center my-4 py-4">Compare Journals</h2>
+    <h3 class="text-center my-4 py-4">Type the name of a journal or policy to search.</h3>
     <table class="table">
       <thead>
         <tr>

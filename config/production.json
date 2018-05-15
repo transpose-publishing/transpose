@@ -1,4 +1,10 @@
 {
-  "host": "transpose-app.feathersjs.com",
-  "port": "PORT"
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mongodb": "mongodb://db:27017/transpose"
 }

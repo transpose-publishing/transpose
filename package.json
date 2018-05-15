@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "DEBUG=nuxt:* nodemon --watch api/ --watch config/ api/index.js",
+    "dev": "DEBUG=nuxt:* ./node_modules/.bin/nodemon --watch api/ --watch config/ api/index.js",
     "prestart": "yarn run build",
     "start": "NODE_ENV=production node api/",
     "generate": "nuxt generate",
@@ -38,6 +38,7 @@
     "helmet": "^3.12.0",
     "js-yaml": "^3.11.0",
     "mongodb": "^3.1.0-beta4",
+    "nodemon": "^1.17.4",
     "nuxt": "^1.0.0",
     "serve-favicon": "^2.5.0",
     "winston": "^2.4.2"
