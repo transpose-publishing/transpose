@@ -1,8 +1,9 @@
+const search = require('feathers-mongodb-fuzzy-search');
 
 
 module.exports = {
   before: {
-    all: [],
+    all: [ search() ],
     find: [],
     get: [],
     create: [],

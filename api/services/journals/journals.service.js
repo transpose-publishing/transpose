@@ -15,6 +15,11 @@ module.exports = function (app) {
 
   mongoClient.then(db => {
     service.Model = db.collection('journals');
+    service.Model.createIndex({
+      publisher: 'text',
+      'policy-id': 'text',
+      'journals': 'text'
+      });
   });
 
   service.hooks(hooks);

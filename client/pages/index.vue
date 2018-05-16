@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .col-md-4 {
   text-align: justify;
   text-justify: auto;

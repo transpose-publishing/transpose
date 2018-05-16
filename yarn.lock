@@ -2688,11 +2688,18 @@ feathers-commons@^0.8.0, feathers-commons@^0.8.7:
   version "0.8.7"
   resolved "https://registry.yarnpkg.com/feathers-commons/-/feathers-commons-0.8.7.tgz#11c6f25b537745a983e8d61552d7db8932d53782"
 
-feathers-errors@^2.9.2:
+feathers-errors@^2.9.1, feathers-errors@^2.9.2:
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/feathers-errors/-/feathers-errors-2.9.2.tgz#96ca0e5fe50cc56f0eccc90ce3fa5e1f8840828d"
   dependencies:
     debug "^3.0.0"
+
+feathers-mongodb-fuzzy-search@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/feathers-mongodb-fuzzy-search/-/feathers-mongodb-fuzzy-search-1.1.1.tgz#3c83a5fafb0b7e98032ad62397e9ff52b88b1a79"
+  dependencies:
+    feathers-commons "^0.8.7"
+    feathers-errors "^2.9.1"
 
 feathers-mongodb@^3.1.0:
   version "3.1.0"

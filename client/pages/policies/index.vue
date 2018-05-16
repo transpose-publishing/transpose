@@ -1,7 +1,9 @@
 <template>
 <div>
   <section class="container" style="padding-top:100px">
-    <h1 class="text-center mb-4 pb-4">Policies</h1>
+    <h1 class="text-center mb-4 pb-4">policies</h1>
+    <p class="text-center text-muted mb-1">search by publisher, journal, or policy id</p>
+    <input class="form-control mx-auto mb-4 text-center" style="max-width:300px;" placeholder="" v-model="searchTerm" @keyup.enter="searchPolicies">
     <table class="table table-striped">
       <thead>
         <tr>
@@ -34,16 +36,39 @@ export default {
   async fetch ({ store, params }) {
     await store.dispatch('journals/find', {query:{}});
   },
+  data() {
+    return {
+      searchTerm: '',
+      journals: []
+    }
+  },
   computed: {
     ...mapGetters('journals', {
-      journals: 'list'
+      allJournals: 'list'
     })
   },
   methods: {
     ...mapActions('journals', {
       findJournals: 'find'
-    })
+    }),
+    searchPolicies() {
+      if (!this.searchTerm) {
+        this.journals = this.allJournals;
+        return;
+      }
+      this.findJournals({query:{
+        $search: this.searchTerm
+      }}).then((results) => {
+        // this.journals = null;
+        // debugger;
+        this.journals = results.data;
+        // debugger;
+      });
+    }
   },
+  created() {
+    this.journals = this.allJournals;
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <header style="padding-top:50px; padding-bottom:50px;">
-    <h1 class="text-center">Example Policy</h1>
+    <h1 class="text-center">{{policy['policy-id']}}</h1>
   </header>
   <section class="details">
     <div class="row">
@@ -77,4 +77,7 @@ export default {
 </script>
 
 <style>
+Infocard {
+  text-align: left;
+}
 </style>
