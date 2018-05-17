@@ -16,7 +16,7 @@ Transpose uses [feathersjs](https://feathersjs.com/), [Nuxt.js docs](https://git
 # make sure you have a mongodb server running at localhost:27017
 
 # install dependencies
-$ yarn install # Or yarn install
+$ yarn
 
 # serve with hot reload at localhost:3000
 $ yarn run dev
