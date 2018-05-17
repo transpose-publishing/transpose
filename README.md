@@ -30,5 +30,3 @@ $ node scripts/initData.js
 # to view logs
 $ docker logs -f transpose_web_1
 ```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
