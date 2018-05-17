@@ -1,6 +1,12 @@
 # transpose
 
-> A nuxt and feathers project
+> TRANsparency in Scholarly Publishing for Open Scholarship Evolution
+
+Because sunlight is the best disinfectant.
+
+## What is transpose?
+
+Transpose is a web-app with a public API that makes it easy to visualize and compare different journals' policies surrounding submission, preprints, peer review, and openness.
 
 ## Build Setup
 
