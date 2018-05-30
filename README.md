@@ -10,7 +10,7 @@ Transpose is a web-app with a public API that makes it easy to visualize and com
 
 ## Build Setup
 
-Transpose uses [feathersjs](https://feathersjs.com/), [Nuxt.js docs](https://github.com/nuxt/nuxt.js), and [MongoDB](https://www.mongodb.com/).
+Transpose uses [feathersjs](https://feathersjs.com/), [Nuxt.js](https://github.com/nuxt/nuxt.js), and [MongoDB](https://www.mongodb.com/).
 
 ``` bash
 # make sure you have a mongodb server running at localhost:27017
