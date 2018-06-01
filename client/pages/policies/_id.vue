@@ -3,13 +3,23 @@
   header(style="padding-top:50px; padding-bottom:50px;")
     h1.text-center {{policy['policy-id']}}
   section.details
-    .row
+
+    ul
       Infocard(q="Policy ID" :a="policy['policy-id']")
       Infocard(q="Publisher" :a="policy.publisher")
       Infocard(q="Policy Heading" :a="policy['policy-heading']")
-      Infocard(v-for="journal in policy.journals" :key="journal" q="Journal" :a="journal")
-      Infocard(v-for="_policy in policy['parent-policies']" :key="_policy" q="Parent Policy" :a="_policy")
-      Infocard(v-for="_policy in policy['child-policies']" :key="_policy" q="Child Policy" :a="_policy")
+      li(v-if="policy.journals")
+        strong Journals:
+        ul
+          Infocard(v-for="journal in policy.journals" :key="journal" :a="journal")
+      li(v-if="policy['parent-policies'].length > 0")
+        strong Parent Policies:
+        ul
+          Infocard(v-for="_policy in policy['parent-policies']" :key="_policy" :a="_policy")
+      li(v-if="policy['child-policies'].length > 0")
+        strong Child Policies:
+        ul
+          Infocard(v-for="_policy in policy['parent-policies']" :key="_policy" :a="_policy")
       Infocard(q="RoMEO Issues?" :a="policy['flag-romeo']")
       Infocard(q="Peer Review Policy URL" :a="policy['peer-review-url']")
       Infocard(q="Publish Peer Reviews?" :a="policy['open-reports']")
@@ -28,8 +38,14 @@
       Infocard(q="PR info deposited into ORCiD?" :a="policy['orcid-peer-review']")
       Infocard(q="Can users archive preprints?" :a="policy['prearchiving']")
       Infocard(q="Preprint Restrictions" :a="policy['prerestrictions']")
-      Infocard(v-for="url in policy['copyright-urls']" :key="url" q="Copyright URL" :a="url")
-      Infocard(v-for="cond in policy.conditions" :key="cond" q="Condition" :a="cond")
+      li(v-if="policy['copyright-urls'].length > 0")
+        strong Copyright URLs:
+        ul
+          Infocard(v-for="url in policy['copyright-urls']" :key="url" :a="url")
+      li(v-if="policy.conditions.length > 0")
+        strong Conditions:
+        ul
+          Infocard(v-for="cond in policy.conditions" :key="cond" :a="cond")
       Infocard(q="Preprint Policy URL" :a="policy['preprint-url']")
       Infocard(q="Allowed Preprint Version" :a="policy['preprint-version']")
       Infocard(q="Allowed Preprint Publication Timeframe" :a="policy['preprint-time']")
