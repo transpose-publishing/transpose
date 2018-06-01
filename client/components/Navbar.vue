@@ -1,28 +1,20 @@
-<template>
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
-  <div class="container">
-    <a class="navbar-brand" href="/">TRANSPOSE</a>
+<template lang='pug'>
+nav.navbar.navbar-expand-lg.navbar-light.bg-white
+  .container
+    a.navbar-brand(href="/") TRANSPOSE
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      span.navbar-toggler-icon
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+    .collapse.navbar-collapse#navbarSupportedContent
+      ul.navbar-nav.mr-auto
+        li.nav-item
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
+        li.nav-item
           <a class="nav-link" href="/policies/compare">Compare</a>
-        </li>
-        <li class="nav-item">
+        li.nav-item
           <a class="nav-link" href="/policies">Browse</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search Policies" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-      </form>
-    </div>
-  </div>
-</nav>
+      form.form-inline.my-2.my-lg-0
+        input.form-control.mr-sm-2(type='search' placeholder='Search Policies' aria-label='Search')
+        button.btn.btn-outline-success.my-2.my-sm-0(type='submit')
+          i.fas.fa-search
 </template>

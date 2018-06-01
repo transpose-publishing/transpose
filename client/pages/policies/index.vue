@@ -1,33 +1,27 @@
-<template>
-<div>
-  <section class="container" style="padding-top:100px">
-    <h1 class="text-center mb-4 pb-4">policies</h1>
-    <p class="text-center text-muted mb-1">search by publisher, journal, or policy id</p>
+<template lang='pug'>
+div
+  section.container(style='padding-top:100px')
+    h1.text-center.mb-4.pb-4 policies
+    p.text-center.text-muted.mb-1 search by publisher, journal, or policy id
     <input class="form-control mx-auto mb-4 text-center" style="max-width:300px;" placeholder="" v-model="searchTerm" @keyup.enter="searchPolicies">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Policy</th>
-          <th scope="col">Publisher</th>
-          <th scope="col">Open Reports</th>
-          <th scope="col">Identities Revealed?</th>
-          <th scope="col">Identities Published?</th>
-          <th scope="col">Preprint posting window</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="journal in journals" :key="journal._id">
-          <th scope="row"><nuxt-link :to="{ path: '/policies/' + journal._id }">{{journal['policy-id']}}</nuxt-link></th>
-          <td>{{journal.publisher}}</td>
-          <td>{{journal['open-reports']}}</td>
-          <td>{{journal['identities-revealed']}}</td>
-          <td>{{journal['identities-published']}}</td>
-          <td>{{journal['preprint-time']}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-</div>
+    table.table.table-striped
+      thead
+        tr
+          th(scope="col") Policy
+          th(scope="col") Publisher
+          th(scope="col") Open Reports
+          th(scope="col") Identities Revealed?
+          th(scope="col") Identities Published?
+          th(scope="col") Preprint posting window
+      tbody
+        tr(v-for="journal in journals" :key="journal._id")
+          th(scope='row')
+            nuxt-link(:to="{ path: '/policies/' + journal._id }") {{journal['policy-id']}}
+          td {{journal.publisher}}
+          td {{journal['open-reports']}}
+          td {{journal['identities-revealed']}}
+          td {{journal['identities-published']}}
+          td {{journal['preprint-time']}}
 </template>
 
 <script>

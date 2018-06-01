@@ -1,154 +1,62 @@
-<template>
-<div>
-  <section class="container" style="padding-top:50px">
-    <h3 class="text-center my-4 py-4">Type the name of a journal or policy to search.</h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">The Dark Arts Outsmarted</th>
-          <th scope="col">Curses and Counter-curses</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">
-            Publisher
-          </th>
-          <td>
-            {{firstPolicy.publisher}}
-          </td>
-          <td>
-            {{secondPolicy.publisher}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            Open Reports?
-          </th>
-          <td class="table-success">
-            {{firstPolicy.openReports}}
-          </td>
-          <td class="table-danger">
-            {{secondPolicy.openReports}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            Identities Revealed?
-          </th>
-          <td class="table-success">
-            {{firstPolicy.identitiesRevealed}}
-          </td>
-          <td class="table-success">
-            {{secondPolicy.identitiesRevealed}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            Identities Published?
-          </th>
-          <td class="table-danger">
-            {{firstPolicy.identitiesPublished}}
-          </td>
-          <td class="table-success">
-            {{secondPolicy.identitiesPublished}}
-
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            Co-review Policy
-          </th>
-          <td>
-            {{firstPolicy.coReviewPolicy}}
-          </td>
-          <td>
-            {{secondPolicy.coReviewPolicy}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            PR Transfer Policy
-          </th>
-          <td>
-            {{firstPolicy.prTransferPolicy}}
-          </td>
-          <td>
-            {{secondPolicy.prTransferPolicy}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            Seperate fields for technical & impact evaluation?
-          </th>
-          <td class="table-danger">
-            {{firstPolicy.separateFields}}
-          </td>
-          <td class="table-success">
-            {{secondPolicy.separateFields}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            Deposit peer review info into ORCiD?
-          </th>
-          <td class="table-danger">
-            {{firstPolicy.orcidDeposit}}
-          </td>
-          <td class="table-success">
-            {{secondPolicy.orcidDeposit}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            Can users archive preprints?
-          </th>
-          <td class="table-danger">
-            {{firstPolicy.prearchive}}
-          </td>
-          <td class="table-success">
-            {{secondPolicy.prearchive}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            When can a preprint be posted?
-          </th>
-          <td class="table-warning">
-            {{firstPolicy.preprintTimes}}
-          </td>
-          <td class="table-success">
-            {{secondPolicy.preprintTimes}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            Preprint Licensing Policy
-          </th>
-          <td>
-            {{firstPolicy.licensingPolicy}}
-          </td>
-          <td>
-            {{secondPolicy.licensingPolicy}}
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">
-            Can preprints be cited?
-          </th>
-          <td class="table-success">
-            {{firstPolicy.citePreprints}}
-          </td>
-          <td class="table-danger">
-            {{secondPolicy.citePreprints}}
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-  </section>
-</div>
+<template lang='pug'>
+div
+  section.container(style="padding-top:50px;")
+    h3.text-center.my-4.py-4 Type the name of a journal or policy to search.
+    table.table
+      thead
+        tr
+          th(scope="col")
+          th(scope="col") The Dark Arts Outsmarted
+          th(scope="col") Curses and Counter-curses
+      tbody
+        tr
+          th(scope='row') Publisher
+          td {{firstPolicy.publisher}}
+          td {{secondPolicy.publisher}}
+        tr
+          th(scope='row') Open Reports?
+          td.table-success {{firstPolicy.openReports}}
+          td.table-danger {{secondPolicy.openReports}}
+        tr
+          th(scope="row") Identities Revealed?
+          td.table-success {{firstPolicy.identitiesRevealed}}
+          td.table-success {{secondPolicy.identitiesRevealed}}
+        tr
+          th(scope="row") Identities Published?
+          td.table-danger {{firstPolicy.identitiesPublished}}
+          td.table-success {{secondPolicy.identitiesPublished}}
+        tr
+          th(scope="row") Co-review Policy
+          td {{firstPolicy.coReviewPolicy}}
+          td {{secondPolicy.coReviewPolicy}}
+        tr
+          th(scope="row") PR Transfer Policy
+          td {{firstPolicy.prTransferPolicy}}
+          td {{secondPolicy.prTransferPolicy}}
+        tr
+          th(scope="row") Seperate fields for technical & impact evaluation?
+          td.table-danger {{firstPolicy.separateFields}}
+          td.table-success {{secondPolicy.separateFields}}
+        tr
+          th(scope="row") Deposit peer review info into ORCiD?
+          td.table-danger {{firstPolicy.orcidDeposit}}
+          td.table-success {{secondPolicy.orcidDeposit}}
+        tr
+          th(scope="row") Can users archive preprints?
+          td.table-danger {{firstPolicy.prearchive}}
+          td.table-success {{secondPolicy.prearchive}}
+        tr
+          th(scope="row") When can a preprint be posted?
+          td.table-warning {{firstPolicy.preprintTimes}}
+          td.table-success {{secondPolicy.preprintTimes}}
+        tr
+          th(scope="row") Preprint Licensing Policy
+          td {{firstPolicy.licensingPolicy}}
+          td {{secondPolicy.licensingPolicy}}
+        tr
+          th(scope="row") Can preprints be cited?
+          td.table-success {{firstPolicy.citePreprints}}
+          td.table-danger {{secondPolicy.citePreprints}}
 </template>
 
 <script>
